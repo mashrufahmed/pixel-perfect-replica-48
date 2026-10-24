@@ -1,4 +1,4 @@
-import { useEffect, useRef, type ComponentType, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 import {
   motion,
   useReducedMotion,
@@ -7,6 +7,7 @@ import {
   type MotionValue,
 } from "motion/react";
 import Lenis from "lenis";
+import type { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /* ------------------------------------------------------------------ */
@@ -99,11 +100,11 @@ export function RollingText({ text, className }: { text: string; className?: str
 /* wipe while the text + arrow roll up.                                */
 /* ------------------------------------------------------------------ */
 interface WipeButtonProps {
-  children: string;
+  children: ReactNode;
   href?: string;
   onClick?: () => void;
   type?: "button" | "submit";
-  icon?: ComponentType<{ size?: number | string; className?: string; strokeWidth?: number }>;
+  icon?: LucideIcon;
   disabled?: boolean;
   className?: string;
   iconClassName?: string;
@@ -259,7 +260,7 @@ export function Parallax({
   const y = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
   return (
     <div ref={ref} className={cn("relative overflow-hidden", className)}>
-      <motion.div className="absolute inset-[-6%]" style={reduced ? undefined : { y }}>
+      <motion.div className="absolute inset-[-6%]" {...(reduced ? {} : { style: { y } })}>
         {children}
       </motion.div>
     </div>
