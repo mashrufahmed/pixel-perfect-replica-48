@@ -261,7 +261,7 @@ export function Contact() {
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <WipeButton
                 type="submit"
-                icon={status === "loading" ? undefined : ArrowRight}
+                {...(status === "loading" ? {} : { icon: ArrowRight })}
                 disabled={status === "loading"}
               >
                 {status === "loading" ? (

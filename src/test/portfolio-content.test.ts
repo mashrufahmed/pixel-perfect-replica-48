@@ -75,11 +75,11 @@ describe("portfolio content rules", () => {
 
   it("has exactly 4 featured projects matching the /002/ stat claim", () => {
     expect(data.projects).toHaveLength(4);
-    expect(data.about.stats[1].value).toBe(data.projects.length);
+    expect(data.about.stats[1]!.value).toBe(data.projects.length);
   });
 
   it("has exactly 6 skill panels matching the /003/ stat claim", () => {
     expect(data.skills).toHaveLength(6);
-    expect(data.about.stats[2].value).toBe(data.skills.length);
+    expect(data.about.stats[2]!.value).toBe(data.skills.length);
   });
 });
