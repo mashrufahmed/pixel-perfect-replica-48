@@ -192,11 +192,20 @@
     display: inline-flex;
     overflow: hidden;
     vertical-align: top;
+    height: 1.5em;
+    line-height: 1.5;
   }
   .roll-inner {
     display: flex;
     flex-direction: column;
     transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  .roll-inner > span {
+    display: flex;
+    align-items: center;
+    height: 1.5em;
+    line-height: 1.5;
+    white-space: nowrap;
   }
   .roll:hover .roll-inner,
   .group:hover .roll .roll-inner,
