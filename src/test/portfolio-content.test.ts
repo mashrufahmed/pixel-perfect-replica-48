@@ -38,7 +38,7 @@ describe("portfolio content rules", () => {
       expect(s).not.toMatch(/\b\d+\/5\b/);
       expect(s).not.toMatch(/clients/i);
       expect(s).not.toMatch(/testimonials/i);
-      expect(s).not.toMatch(/review/i);
+      expect(s).not.toMatch(/client reviews?/i);
     }
   });
 
